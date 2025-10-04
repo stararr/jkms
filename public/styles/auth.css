@@ -1,0 +1,71 @@
+:root {
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+input {font: inherit;}
+
+p {padding: 0; margin: 0;}
+
+form {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+}
+
+#credentials {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr 1fr;
+    gap: .5rem;
+}
+
+h1 {padding: 0; margin: 0;}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: .5rem;
+}
+
+#authentication {
+    backdrop-filter: invert(100%);
+    background-color: #ffffff80;
+    border: black .25rem solid;
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+    padding: .5rem;
+}
+
+#qov {
+    z-index: -5;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+}
+
+#links {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-content: center;
+}
+#links > a {
+    padding: 0 .5rem;
+}
+
+#main {border-right: black 1px solid;}
+#signuplogin {border-left: black 1px solid;}

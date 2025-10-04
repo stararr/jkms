@@ -1,0 +1,101 @@
+:root {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    interpolate-size: allow-keywords;
+}
+
+body {
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+input {font: inherit;}
+p, h1, h2, h3, h4, h5, h6 {padding: 0; margin: 0; display: inline;}
+summary {font-size: 1.25rem; font-weight: bold;}
+
+#editor-container {
+    background-color: #fff;
+    border: steelblue 0.125rem solid;
+    padding: .5rem;
+    max-height: 75%;
+    overflow-y: scroll;
+    /*width: 0;
+    height: 0;*/
+
+    transition: width 250ms ease-out, height 250ms ease-out;
+/*}
+#profile:hover {width:calc-size(auto, size); height:calc-size(auto, size);}
+#setprofile {*/
+    display: grid;
+    grid-template-columns: auto min-content;
+    gap: .5rem;
+    align-items: start;
+    justify-content: center;
+    transition: width 250ms ease-out;
+    width: calc-size(auto, size);
+}
+
+/*#setprofile*/ #profile > div {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: center;
+}
+details {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.details {
+    width: auto;
+    display: grid;
+    grid-template-columns: minmax(5.25rem, min-content) 1fr;
+    gap: .5rem;
+}
+/*.details > p {white-space: nowrap;}
+*/
+#pfp-preview {
+    width: 6.25rem;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border: steelblue 0.125rem solid;
+}
+
+h4 {text-align: center;}
+#pfp-preview-msg {
+    color: grey;
+    font-weight: normal;
+    text-align: center;
+}
+
+#editor-buttons, #editor-links {
+    flex-direction: row;
+    grid-column: 1 / span 2;
+}
+
+#editor-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#editor-links > a {padding: 0 .5rem;}
+
+#editor-links > a + a {
+    border-left: black solid 1px;
+}
+
+.color-alpha {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .25rem;
+}
+.color-alpha > input[type="range"] {
+    flex-grow: 1;
+}
