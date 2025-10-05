@@ -117,7 +117,7 @@ var loading = true
 });*/
 
 const postListener = onSnapshot(query(collection(db, "posts"), orderBy("dateCreated", "desc")), async (snapshot)=>{
-    //if (loading) {loading=false; return;}
+    if (loading) {loading=false;}
     snapshot.docChanges().forEach
     postContainer.innerHTML = ""
     const posts = await Promise.all(snapshot.docs.map(post => addPost(post)))
