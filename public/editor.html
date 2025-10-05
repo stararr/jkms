@@ -8,54 +8,56 @@
         <div id="editor-container">
             <!--<div id="setprofile">-->
                 <div id="editor">
-                    <details>
+                    <details open>
                         <summary>BASIC DETAILS</summary>
-                        <div class="details">
+                        <form id="setprofile">
+                            <div class="details">
 
-                            <p>username</p><input type="text" id="username" name="username">
+                                <p>username</p><input type="text" id="username" name="username">
 
-                            <p>image</p><input type="url" id="pfp-address" name="pfp">
+                                <p>image</p><input type="url" id="pfp-address" name="pfp">
 
-                        </div>
+                            </div>
+                            <div class="editor-buttons">
+                                <input type="submit" value="set ur profile" id="setprofile">
+                                <input type="reset" value="reset to original values" id="resetprofile">
+                            </div>
+                        </form>
                     </details>
                     <details>
                         <summary>BLOG THEME</summary>
 
-                    <div class="details">
+                        <div class="details">
 
-                        <p>title colour</p>    
-                        <div class="color-alpha"><input type="color"><input type="range" min="5" max="255" value="255"><input type="hidden" name="title-color"></div>
+                            <p>title colour</p>    
+                            <div class="color-alpha"><input type="color"><input type="range" min="5" max="255" value="255"><input type="hidden" name="title-color"></div>
 
-                        <p>text colour</p>    
-                        <div class="color-alpha"><input type="color"><input type="range" min="5" max="255" value="255"><input type="hidden" name="text-color"></div>
+                            <p>text colour</p>    
+                            <div class="color-alpha"><input type="color"><input type="range" min="5" max="255" value="255"><input type="hidden" name="text-color"></div>
 
-                        <p>link colour</p>    
-                        <div class="color-alpha"><input type="color"><input type="range" min="5" max="255" value="255"><input type="hidden" name="link-color"></div>
+                            <p>link colour</p>    
+                            <div class="color-alpha"><input type="color"><input type="range" min="5" max="255" value="255"><input type="hidden" name="link-color"></div>
 
-                        <p>page colour</p>    
-                        <div class="color-alpha"><input type="color"><input type="range" min="5" max="255" value="255"><input type="hidden" name="page-color"></div>
+                            <p>page colour</p>    
+                            <div class="color-alpha"><input type="color"><input type="range" min="5" max="255" value="255"><input type="hidden" name="page-color"></div>
 
-                        <p>page line colour</p>    
-                        <div class="color-alpha"><input type="color"><input type="range" min="5" max="255" value="255"><input type="hidden" name="page-line-color"></div>
+                            <p>page line colour</p>    
+                            <div class="color-alpha"><input type="color"><input type="range" min="5" max="255" value="255"><input type="hidden" name="page-line-color"></div>
 
-                        <p>page margin colour</p>    
-                        <div class="color-alpha"><input type="color"><input type="range" min="5" max="255" value="255"><input type="hidden" name="page-margin-color"></div>
+                            <p>page margin colour</p>    
+                            <div class="color-alpha"><input type="color"><input type="range" min="5" max="255" value="255"><input type="hidden" name="page-margin-color"></div>
 
-                        <p>author link colour</p>    
-                        <div class="color-alpha"><input type="color"><input type="range" min="5" max="255" value="255"><input type="hidden" name="author-link-color"></div>
+                            <p>author link colour</p>    
+                            <div class="color-alpha"><input type="color"><input type="range" min="5" max="255" value="255"><input type="hidden" name="author-link-color"></div>
 
-                        <p>author info colour</p>    
-                        <div class="color-alpha"><input type="color"><input type="range" min="5" max="255" value="255"><input type="hidden" name="author-info-color"></div>
+                            <p>author info colour</p>    
+                            <div class="color-alpha"><input type="color"><input type="range" min="5" max="255" value="255"><input type="hidden" name="author-info-color"></div>
 
-                        <p>author image opacity</p>
-                        <input type="range" min="5" max="255" value="255">
+                            <p>author image opacity</p>
+                            <input type="range" min="5" max="255" value="255">
 
-                    </div>
+                        </div>
                     </details>
-
-
-                    
-
                 </div>
                 <div>
                     <img id="pfp-preview">
@@ -63,10 +65,6 @@
                     <h6 id="pfp-preview-msg">This is a preview of your profile picture</h6>
                 </div>
                 <p id="editor-message"></p>
-                <div id="editor-buttons">
-                    <input type="submit" value="set ur profile" id="setprofile">
-                    <input type="reset" value="reset to original values" id="resetprofile">
-                </div>
                 <nav id="editor-links">
                     <a href="index">blog</a>
                     <a href="login">log in</a>

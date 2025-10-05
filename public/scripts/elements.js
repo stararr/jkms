@@ -41,7 +41,6 @@ if (containerElement) {
             containerElement.offsetHeight
             containerElement.style.width = "calc-size(auto, size)"
             containerElement.style.height = "calc-size(auto, size)"
-            console.log("hi")
         })
     })
 }

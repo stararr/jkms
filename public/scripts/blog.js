@@ -17,7 +17,6 @@ async function addPost(postRef) {
         const data = docSnap.data()
         
         var post = document.createElement("div")
-        console.log(data)
         
 
         post.className = "post"

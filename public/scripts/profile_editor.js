@@ -37,7 +37,6 @@ onAuthStateChanged(auth, async (user) => {
             await setDoc(userRef, {lastLogin: new Date()}, {merge:true}) // force handshake with the server
 
             const docSnap = await getDoc(userRef)
-            console.log(docSnap.data())
             if (docSnap.exists()) {
 
                 const data = docSnap.data()
