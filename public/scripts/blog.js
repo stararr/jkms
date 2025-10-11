@@ -1,7 +1,7 @@
 import { auth, db } from "./login.js"
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
 import { doc, setDoc, getDoc, addDoc, onSnapshot, collection, query, orderBy, where, getDocs, deleteDoc } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
-import { getDate } from "./functions.js"
+import { getPostTimestamp } from "./functions.js"
 
 const postContainer = document.querySelector("#posts")
 
@@ -36,9 +36,13 @@ async function addPost(postRef) {
                         <img class="author-img" src=${data.pfp?? "./media/sacabambaspis.png"}>
                         <a class="author-name" href="profile/${postData.author}">${data.username?? "John Doe"}</a>
                         <ul class="author-info">
-                            <li class="author-join-date"><b>Joined on:</b> ${getDate(data.joinDate)}</li>
-                            <li class="author-last-login"><b>Last login:</b> ${getDate(data.lastLogin)}</li>
-                            <li class="author-post-count"><b>Post count:</b> ${totalPosts}</li>
+                            <li><b>Joined on:</b> ${getPostTimestamp(data.joinDate)}</li>
+                            <li><b>Last login:</b> ${getPostTimestamp(data.lastLogin)}</li>
+                            <li><b>Post count:</b> ${totalPosts}</li>
+                        </ul>
+                        <hr>
+                        <ul class="post-info">
+                            <li><b>Post date:</b> ${getPostTimestamp(postData.dateCreated)}</li>
                         </ul>
                     </div>
                 </div>

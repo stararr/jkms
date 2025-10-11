@@ -131,16 +131,17 @@ body {
     margin-bottom: .25rem;
 }
 
-.author-info {
+.author-info, .post-info {
     word-wrap: normal;
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
-.author-info > li {
+.author-info > li, .post-info > li {
     color: grey;
     font-size: 0.625em;
 }
+.post-sidebar > hr {width: 100%;}
 
 textarea {
     padding: 0.125rem;

@@ -1,3 +1,68 @@
 export function getDate(Timestamp) {
-    return new Date(Timestamp.seconds*(10**3) + Timestamp.nanoseconds/(10**6))
+    var date = new Date(Timestamp.seconds*(10**3) + Timestamp.nanoseconds/(10**6))
+    return date
+}
+
+const day = 86400000
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+function isTomorrow(date) {
+    const today = new Date()
+    const todayBegin = new Date(today)
+    todayBegin.setHours(0,0,0,0)
+
+    const tomorrow = new Date(todayBegin.getTime()+day)
+    const dayaftertomorrow = new Date(tomorrow.getTime()+day)
+
+    return date<=dayaftertomorrow&&date>=tomorrow
+}
+
+function isToday(date) {
+    const today = new Date()
+    const todayBegin = new Date(today)
+    todayBegin.setHours(0,0,0,0)
+
+    const tomorrow = new Date(todayBegin.getTime()+day)
+
+    return date<=tomorrow&&date>=todayBegin
+}
+
+function isYesterday(date) {
+    const today = new Date()
+    const todayBegin = new Date(today)
+    todayBegin.setHours(0,0,0,0)
+
+
+    const yesterday = new Date(todayBegin.getTime()-day)
+
+    return date<=todayBegin&&yesterday<=date
+}
+
+function getRelativeTime(date) {
+    var day = null
+    if (isToday(date)) {day="Today"}
+    else if (isYesterday(date)) {day="Yesterday"}
+    else if (isTomorrow(date)) {day="Tomorrow"}
+    return day
+}
+
+function getDay(date, short=false, relative=false) {
+    var day = days[date.getDay()]
+    if (short) {day = day.slice(0,3)}
+    if (relative) {day = getRelativeTime(date)}
+    return day
+}
+
+function getMonth(date, short=false) {
+    var month = months[date.getMonth()]
+    if (short) {month = month.slice(0,3)}
+    return month
+}
+
+export function getPostTimestamp(Timestamp) {
+    const dateObject = getDate(Timestamp)
+    var date = getRelativeTime(dateObject) ?? `${getMonth(dateObject, true)} ${dateObject.getMonth()} ${dateObject.getFullYear()}`
+    var time = `${dateObject.getHours().toString().padStart(2,"0")}:${dateObject.getMinutes().toString().padStart(2,"0")}`
+    return `${date}, ${time}`
 }
